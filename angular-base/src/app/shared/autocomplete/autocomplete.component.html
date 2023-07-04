@@ -1,0 +1,43 @@
+<!--Contenedor General-->
+<div class="contenedor-general" [style]="e_contenedorGeneral">
+
+    <!--Contenedor del buscador-->
+    <div class="contenedor-buscador" [style]="e_contenedorBuscador">
+        <label for="inputTexto" class="form-label label-titulo" [style]="e_labelTitulo">{{t_titulo}}</label>
+        <div class="contenedor-input-botones" [style]="e_contenedorInputBotones">
+            <input type="text" class="form-control" autocomplete="off" (keydown)="onKeyDown($event)" #inputTexto
+                name="inputTexto" id="inputTexto" [style]="e_input">
+            <button [disabled]="cargando" class="btn btn-primary boton" name="btnBuscar" id="btnBuscar" #btnBuscar
+                (click)="buscar()" [style]="e_boton">
+                <!-- https://icons.getbootstrap.com/ -->
+                <ng-container *ngIf="!cargando; else spinner">
+                    <i class="bi bi-search fw-bold"></i>
+                </ng-container>
+                <ng-template #spinner>
+                    <span class="spinner-border spinner-border-sm"></span>
+                </ng-template>
+            </button>
+            <button class="btn btn-primary boton" name="btnLimpiar" id="btnLimpiar" #btnLimpiar
+                (click)="limpiarYEmitirEvento()" [style]="e_boton">
+                <!-- https://icons.getbootstrap.com/ -->
+                <i class="bi bi-x-circle"></i>
+            </button>
+        </div>
+    </div>
+
+    <!--Contenedor de los resultados-->
+    <div class="contenedor-resultados" [style]="e_contenedorResultados">
+        <ng-container *ngIf="cargando; else resultados">
+            <app-mini-loader [e_contenedorSpinner]="e_contenedorSpinner" [e_spanSpinner]="e_spanSpinner"
+                [e_divSpinner]="e_divSpinner" [t_textoSpinner]="t_textoSpinner"></app-mini-loader>
+        </ng-container>
+        <ng-template #resultados>
+            <ng-container *ngIf="datos && datos.length > 0">
+                <div class="div-resultado" *ngFor="let dato of datos" (click)="itemSeleccionado(dato,inputTexto)"
+                    [style]="e_divResultado">
+                    <p class="p-resultado" [style]="e_pResultado">{{ pipe(dato) }} </p>
+                </div>
+            </ng-container>
+        </ng-template>
+    </div>
+</div>

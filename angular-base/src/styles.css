@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*******************************************************************************/
+/************************************ TOAST ************************************/
+/*******************************************************************************/
+
+.toast-custom-position {
+    position: fixed;
+    top: 20px;
+    right: 320px;
+}
+
+.toast-general {
+    position: absolute;
+    /*Evita el efecto STACK de toasts. */
+    min-width: 300px;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.toast-custom-error {
+    background-color: #ba5858;
+}
+
+.toast-custom-success {
+    background-color: #56a74d;
+}
+
+.toast-custom-info {
+    background-color: #548796;
+}
+
+.toast-custom-warning {
+    background-color: #efec39;
+    color: black;
+}
+
+/*******************************************************************************/
+/********************************* FIN TOAST ***********************************/
+/*******************************************************************************/
+
+
+/*******************************************************************************/
+/************************************ SWAL *************************************/
+/*******************************************************************************/
+
+.sw-container-exito {
+    background-color: rgba(53, 169, 32, 0.614) !important;
+}
+
+.sw-container-error {
+    background-color: rgba(255, 0, 0, 0.511) !important;
+}
+
+.sw-container-question {
+    background-color: rgba(0, 255, 255, 0.541) !important;
+}
+
+.sw-container-info {
+    background-color: rgba(8, 0, 255, 0.563) !important;
+}
+
+.sw-container-warning {
+    background-color: rgba(255, 242, 0, 0.421) !important;
+}
+
+.sw-title {
+    font-size: 3em !important;
+    font-weight: bold !important;
+    /* background-color: #d17575;  */
+}
+
+.sw-htmlContainer {
+    font-size: 2em !important;
+    font-weight: bold !important;
+    /* background-color: red !important;  */
+    /* color: black !important;   */
+}
+
+.sw-popup {
+    border-radius: 50px !important;
+    background-color: #ffffff !important;
+}
+
+.sw-cancel {
+    font-size: 2em !important;
+    font-weight: bold !important;
+    background-color: #d17575 !important;
+}
+
+.sw-confirm {
+    font-size: 2em !important;
+    font-weight: bold !important;
+    background-color: #5b9654 !important;
+}
+
+/*******************************************************************************/
+/******************************** FIN SWAL *************************************/
+/*******************************************************************************/

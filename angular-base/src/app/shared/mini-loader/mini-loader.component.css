@@ -1,0 +1,19 @@
+.contenedor-spinner {
+    display: flex;
+    justify-content: start;
+}
+
+.span-spinner {
+    font-weight: bold;
+    text-align: start;
+    align-self: center;
+    font-size: 24px;
+    margin: 5px;
+}
+
+.div-spinner {
+    align-self: center;
+    margin: 10px;
+    scale: 1;
+    color: red;
+}
